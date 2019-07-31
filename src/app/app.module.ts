@@ -11,21 +11,27 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ChatComponent } from './components/chat/chat.component';
 
+/*se debe importar para el manejo de ngModel*/
+import { FormsModule } from '@angular/forms';
+import { ChatService } from './providers/chat.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    FormsModule
   ],
-  providers: [],
+  providers: [ ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
