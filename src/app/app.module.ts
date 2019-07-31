@@ -16,12 +16,14 @@ import { ChatComponent } from './components/chat/chat.component';
 /*se debe importar para el manejo de ngModel*/
 import { FormsModule } from '@angular/forms';
 import { ChatService } from './providers/chat.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

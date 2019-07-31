@@ -13,8 +13,11 @@ export class ChatComponent implements OnInit {
 
   constructor(public sevicioChat: ChatService) {
     this.sevicioChat.cargarMensajes().subscribe(() => {
-      /* poder poner el foco al final del chat */
-      this.elemento.scrollTop = this.elemento.scrollHeight;
+      setTimeout(() => {
+        /* poder poner el foco al final del chat */
+        this.elemento.scrollTop = this.elemento.scrollHeight;
+      }, 20);
+
     });
   }
 
