@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ChatService } from '../../providers/chat.service';
-import { Mensaje } from '../../interface/mensaje.interface';
+/* import { Mensaje } from '../../interface/mensaje.interface'; */
 
 @Component({
   selector: 'app-chat',
