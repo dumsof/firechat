@@ -21,8 +21,11 @@ export class ChatService {
       .pipe(
         map((mensajes: Mensaje[]) => {
           console.log(mensajes);
-
+          this.chats = mensajes;
         })
       );
+  }
+  agregarMensaje(texto: string) {
+
   }
 }
