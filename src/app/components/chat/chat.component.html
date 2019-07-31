@@ -2,7 +2,7 @@
 <hr>
 <div class="app-mensajes" id="app-mensajes">
     <div *ngFor="let chat of sevicioChat.chats" class="text-right">
-        <span class="badge badge-primary">Darwin</span>
+        <span class="badge badge-primary">{{chat.nombre}}</span>
         <p>
             {{chat.mensajes}}
         </p>

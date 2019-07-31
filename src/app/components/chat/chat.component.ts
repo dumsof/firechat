@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../../providers/chat.service';
 
 
@@ -7,11 +7,21 @@ import { ChatService } from '../../providers/chat.service';
   templateUrl: './chat.component.html',
   styles: []
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
   mensaje: string = '';
+  elemento: any;
+
   constructor(public sevicioChat: ChatService) {
-    this.sevicioChat.cargarMensajes().subscribe();
+    this.sevicioChat.cargarMensajes().subscribe(() => {
+      /* poder poner el foco al final del chat */
+      this.elemento.scrollTop = this.elemento.scrollHeight;
+    });
   }
+
+  ngOnInit() {
+    this.elemento = document.getElementById('app-mensajes');
+  }
+
   enviar_mensaje() {
     console.log(this.mensaje);
     if (this.mensaje.length === 0) {
